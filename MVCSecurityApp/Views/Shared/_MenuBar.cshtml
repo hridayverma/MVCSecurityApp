@@ -1,0 +1,19 @@
+﻿<div class="navbar-collapse collapse">
+    <ul class="nav navbar-nav">
+        <li>@Html.ActionLink("Home", "Index", "Home")</li>
+        @if (User.Identity.IsAuthenticated)
+        {
+            <li>@Html.ActionLink("Standard", "Index", "Standards")</li>
+            <li>@Html.ActionLink("Faculty", "Index", "Faculties")</li>
+            <li>@Html.ActionLink("Course", "Index", "Courses")</li>
+            <li>@Html.ActionLink("Student", "Index", "Students")</li>
+            <li><a>Welcome:@User.Identity.Name.ToUpper()</a></li>
+            <li>@Html.ActionLink("Sign Out", "SignOut", "Account")</li>
+        }
+        else
+        {
+            <li>@Html.ActionLink("Sign In", "Login", "Account")</li>
+            <li>@Html.ActionLink("Register", "SignUp", "Account")</li>
+        }
+    </ul>
+</div>
